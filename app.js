@@ -1,5 +1,20 @@
-const nav=document.getElementById('nav'),menuBtn=document.getElementById('menuBtn');menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
-const links=[...document.querySelectorAll('.nav-link')];function syncNav(){const hash=location.hash||'#home';links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===hash));nav.classList.remove('open')}window.addEventListener('hashchange',syncNav);syncNav();
-const modal=document.getElementById('modal'),modalTitle=document.getElementById('modalTitle'),modalText=document.getElementById('modalText');document.querySelectorAll('[data-tool]').forEach(btn=>btn.addEventListener('click',()=>{const name=btn.dataset.tool;modalTitle.textContent=name;modalText.textContent=name==='PDF to JPG'?'The public converter interface is ready. Secure processing can be connected without changing this design.':'This protected tool will open inside the authenticated UDAAN workspace.';modal.classList.remove('hidden')}));document.getElementById('closeModal').addEventListener('click',()=>modal.classList.add('hidden'));modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.add('hidden')});
-document.getElementById('loginForm').addEventListener('submit',e=>{e.preventDefault();document.getElementById('loginMessage').textContent='Secure authentication backend is required before credentials can be accepted. This screen is ready for the production auth connection.'});
-document.getElementById('forgotBtn').addEventListener('click',()=>{document.getElementById('loginMessage').textContent='Password reset will use the configured email authentication provider.'});
+const nav=document.getElementById("nav"),menu=document.getElementById("menu"),modal=document.getElementById("modal"),modalTitle=document.getElementById("modalTitle"),modalText=document.getElementById("modalText"),modalAction=document.getElementById("modalAction");
+menu?.addEventListener("click",()=>nav.classList.toggle("open"));
+const links=[...document.querySelectorAll(".nav-link")];
+function sync(){const id=location.hash||"#home";links.forEach(a=>a.classList.toggle("active",a.getAttribute("href")===id));nav.classList.remove("open")}
+window.addEventListener("hashchange",sync);sync();
+
+const copy={
+"PDF to JPG":"The public PDF-to-JPG workspace is selected. Connect the production document processor here without changing the visual experience.",
+"PDF Workspace":"This protected workspace is designed for merge, compress, reorder, delete and image insertion after secure sign-in.",
+"Image Tools":"Image conversion, compression and enhancement tools are ready for the authenticated workspace.",
+"Aadhaar Card Size":"This is a protected document workflow. Access should remain behind authentication and secure document storage."
+};
+function openTool(name){modalTitle.textContent=name;modalText.textContent=copy[name]||"Open this tool from your UDAAN workspace.";modal.classList.remove("hidden")}
+document.querySelectorAll("[data-tool]").forEach(b=>b.addEventListener("click",()=>openTool(b.dataset.tool)));
+document.getElementById("close")?.addEventListener("click",()=>modal.classList.add("hidden"));
+modal?.addEventListener("click",e=>{if(e.target===modal)modal.classList.add("hidden")});
+modalAction?.addEventListener("click",()=>modal.classList.add("hidden"));
+
+document.getElementById("loginForm")?.addEventListener("submit",e=>{e.preventDefault();document.getElementById("loginMessage").textContent="Production authentication is not connected to this GitHub static build yet. The login UI is ready for the secure backend connection."});
+document.getElementById("forgot")?.addEventListener("click",()=>{document.getElementById("loginMessage").textContent="Password reset will use the configured email authentication provider."});
