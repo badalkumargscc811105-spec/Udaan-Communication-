@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="UDAAN Communication — Digital services, document tools and smart service management.">
+  <title>UDAAN Communication</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-orb orb-a"></div><div class="bg-orb orb-b"></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="UDAAN Communication home">
+      <span class="brand-mark">U</span><span><b>UDAAN</b><small>Communication</small></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a class="nav-link active" href="#home">Home</a>
+      <a class="nav-link" href="#services">Services</a>
+      <a class="nav-link" href="#tools">Tools</a>
+      <a class="nav-link" href="#notices">Notices</a>
+      <a class="nav-link" href="#login">Login</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow">DIGITAL SERVICES • DOCUMENTS • SUPPORT</span>
+        <h1>Power your everyday work with <span>UDAAN.</span></h1>
+        <p>A modern digital service platform for documents, online services and role-based business management — designed for speed, clarity and trust.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#services">Explore Services <span>→</span></a>
+          <a class="btn ghost" href="#tools">Open Tools</a>
+        </div>
+        <div class="trust-row"><span>✓ Mobile ready</span><span>✓ Secure access</span><span>✓ Simple workflow</span></div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-top"><span class="live-dot"></span> UDAAN Workspace <span class="pill">Online</span></div>
+        <div class="metric-grid">
+          <div class="metric"><small>Services</small><strong>24+</strong><span>Ready to use</span></div>
+          <div class="metric"><small>Tools</small><strong>08</strong><span>Document & image</span></div>
+          <div class="metric wide"><small>Workflow</small><div class="progress"><i></i></div><span>Fast • Clear • Organized</span></div>
+        </div>
+        <div class="floating-chip chip-one">PDF → JPG</div>
+        <div class="floating-chip chip-two">Smart Dashboard</div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-head"><div><span class="eyebrow">WHAT WE OFFER</span><h2>Services built around your work</h2></div><p>Organized tools and services with a clean experience across phone and desktop.</p></div>
+      <div class="card-grid">
+        <article class="service-card"><div class="icon">▣</div><h3>Land & Revenue</h3><p>Dakhil Kharij, Parimarjan, lagan and related digital workflows.</p><a href="#login">Access service →</a></article>
+        <article class="service-card"><div class="icon">◈</div><h3>Document Services</h3><p>Convert, merge, compress and organize your digital documents.</p><a href="#tools">Open tools →</a></article>
+        <article class="service-card"><div class="icon">✦</div><h3>Identity & Forms</h3><p>Streamlined support for common online application workflows.</p><a href="#login">Get started →</a></article>
+        <article class="service-card"><div class="icon">⌁</div><h3>Business Workspace</h3><p>Role-based dashboards for admins, franchises and school partners.</p><a href="#login">Sign in →</a></article>
+      </div>
+    </section>
+
+    <section class="section tools-section" id="tools">
+      <div class="section-head"><div><span class="eyebrow">SMART TOOLS</span><h2>Do more with fewer steps</h2></div><p>Public and protected tools can live in one consistent workspace.</p></div>
+      <div class="tool-list">
+        <button class="tool-card" data-tool="PDF to JPG"><span class="tool-icon">PDF</span><span><b>PDF to JPG</b><small>Public tool • quick conversion</small></span><em>→</em></button>
+        <button class="tool-card" data-tool="PDF Workspace"><span class="tool-icon">PDF</span><span><b>PDF Workspace</b><small>Merge, compress, reorder and edit</small></span><em>→</em></button>
+        <button class="tool-card" data-tool="Image Tools"><span class="tool-icon">IMG</span><span><b>Image Tools</b><small>Convert, compress and enhance</small></span><em>→</em></button>
+        <button class="tool-card" data-tool="Aadhaar Card Size"><span class="tool-icon">ID</span><span><b>Aadhaar Card Size</b><small>Protected document workflow</small></span><em>→</em></button>
+      </div>
+    </section>
+
+    <section class="section notice-section" id="notices">
+      <div class="notice-panel">
+        <div><span class="eyebrow">NOTICE CENTER</span><h2>Important updates, in one place.</h2><p>Festival notices, service announcements and workspace updates can be managed from the admin dashboard.</p></div>
+        <div class="notice-demo"><span class="notice-tag">NOTICE</span><b>Welcome to UDAAN Communication</b><small>Admin-managed announcements will appear here.</small></div>
+      </div>
+    </section>
+
+    <section class="section login-section" id="login">
+      <div class="login-card">
+        <div><span class="eyebrow">UDAAN WORKSPACE</span><h2>One login. The right dashboard.</h2><p>Sign in to access services based on your role.</p></div>
+        <form id="loginForm" class="login-form">
+          <label>User ID or Email<input id="loginId" autocomplete="username" placeholder="Enter your User ID or email" required></label>
+          <label>Password<input id="loginPassword" type="password" autocomplete="current-password" placeholder="Enter password" required></label>
+          <button class="btn primary" type="submit">Continue <span>→</span></button>
+          <button class="text-btn" type="button" id="forgotBtn">Forgot password?</button>
+          <div id="loginMessage" class="form-message" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="footer-brand"><span class="brand-mark">U</span><b>UDAAN Communication</b></div><span>08 AM – 08 PM</span><span>Digital services, made simpler.</span></footer>
+  <div class="modal hidden" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-box"><button class="close" id="closeModal">×</button><span class="eyebrow">UDAAN</span><h3 id="modalTitle">Tool</h3><p id="modalText"></p><button class="btn primary" id="modalAction">Continue</button></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
