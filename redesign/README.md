@@ -10,6 +10,13 @@ This is a non-production UI preview on the `redesign-preview` branch. It does no
 - `login.html` — login UI preview only
 - `tracking.html` — receipt tracking UI preview only
 
+## Supabase connection status
+- `supabase-client.js` connects this preview to the existing Supabase project using its public publishable key only.
+- The homepage shows a backend connection indicator.
+- `login.html` now attempts Supabase email/password authentication, Google OAuth (only if enabled in Supabase), and password-reset email.
+- The current `public` schema currently exposes `site_settings`, `profiles`, `messages`, `notices`, and `reviews`; the tables reported zero rows at the time of connection work. No schema or table was changed.
+- Username/User ID/mobile login is not enabled because no safe username-to-email mapping table/column was found in the current schema. Dashboard routing is not yet implemented.
+
 ## Important integration work still required
 - Connect existing authentication without changing user IDs, roles, or sessions.
 - Read and write existing database tables using the current schema.
